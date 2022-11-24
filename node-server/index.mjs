@@ -1,9 +1,9 @@
 import axios from "axios";
 import process from "process";
 import fs from "fs";
-
+let filePath =''
 async function getUrl() {
-    let file = fs.readFileSync("./luv.mp3");
+    let file = fs.readFileSync(filePath);
     let upload_url = "";
     try {
         let { data } = await axios.post(

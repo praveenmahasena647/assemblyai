@@ -11,8 +11,9 @@ import (
 )
 
 var (
-	URL string = "https://api.assemblyai.com/v2/upload"
-	key string = ""
+	URL      string = "https://api.assemblyai.com/v2/upload"
+	key      string = ""
+	filePath string
 )
 
 func main() {
@@ -20,7 +21,7 @@ func main() {
 }
 
 func getStarted() {
-	var file, fileErr = ioutil.ReadFile("./luv.mp3")
+	var file, fileErr = ioutil.ReadFile(filePath)
 	if fileErr != nil {
 		log.Println("read File issue")
 		os.Exit(2)
